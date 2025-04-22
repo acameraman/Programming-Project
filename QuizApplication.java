@@ -73,9 +73,10 @@ public class QuizApplication
                         }
                     }
     
+                    in.nextLine();
                     for (int j = 0; j < numOptions; j++) {
                         System.out.print("Option " + (j + 1) + ": ");
-                        options.add(in.next());
+                        options.add(in.nextLine());
                     }
     
                     int correctAnswerIndex = -1;
