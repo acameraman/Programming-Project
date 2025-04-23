@@ -82,7 +82,7 @@ public class QuizApplication
                     int correctAnswerIndex = -1;
                     String correctAnswer = "";
                     while (true) {
-                        System.out.print("Enter the correct answer (as written in one of the options): ");
+                        System.out.print("Enter the number of the correct answer: ");
                         correctAnswer = in.next();
                         try {
                             correctAnswerIndex = Integer.parseInt(correctAnswer);
