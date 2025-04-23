@@ -28,6 +28,13 @@ public class MultipleChoiceQuestion extends Question
     @Override
     public int getScore(String answer)
     {
-        return answer.equalsIgnoreCase(correctAnswer) ? 1 : 0;
+        try {
+            int selectedIndex = Integer.parseInt(answer.trim());
+            if(selectedIndex >= 1 && selectedIndex <= options.size()){
+                String selectedOption = option.get(selectedIndex - 1);
+                return selectedOption.equalsIgnoreCase(correctAnswer)? 1 : 0;}
+        }
+        catch (NumberFormatException e) { 
+        } return 0;
     }
 }
