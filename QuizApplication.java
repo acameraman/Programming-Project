@@ -80,9 +80,10 @@ public class QuizApplication
                     }
     
                     int correctAnswerIndex = -1;
+                    String correctAnswer = "";
                     while (true) {
                         System.out.print("Enter the correct answer (as written in one of the options): ");
-                        String correctAnswer = in.next();
+                        correctAnswer = in.next();
                         try {
                             correctAnswerIndex = Integer.parseInt(correctAnswer);
                             if (correctAnswerIndex >= 1 && correctAnswerIndex <= options.size()) {
@@ -95,7 +96,7 @@ public class QuizApplication
                         }
                     }
     
-                    String correctAnswer = options.get(correctAnswerIndex - 1);
+                    //String correctAnswer = options.get(correctAnswerIndex - 1); // correct answer set to actual text, not string of answer number like in fixed questions
                     quiz.addQuestion(new MultipleChoiceQuestion(questionText, correctAnswer, options));
                 }
             }
