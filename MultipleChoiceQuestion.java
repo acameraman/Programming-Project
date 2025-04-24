@@ -25,17 +25,25 @@ public class MultipleChoiceQuestion extends Question
         }
     }
 
-     @Override
-    public int getScore(String answer)
-    {
-        try {
-            int selectedIndex = Integer.parseInt(answer.trim());
-            if (selectedIndex >= 1 && selectedIndex <= options.size()) {
+  public int getScore(String answer)
+{
+    try {
+        int selectedIndex = Integer.parseInt(answer.trim());
+
+        if (selectedIndex >= 1 && selectedIndex <= options.size()) {
+            // correctAnswer が数字の文字列なら、それを使って採点
+            try {
+                int correctIndex = Integer.parseInt(correctAnswer.trim());
+                return (selectedIndex == correctIndex) ? 1 : 0;
+            } catch (NumberFormatException e) {
+                // correctAnswer がオプションのテキストだった場合
                 String selectedOption = options.get(selectedIndex - 1);
                 return selectedOption.equalsIgnoreCase(correctAnswer) ? 1 : 0;
             }
-        } catch (NumberFormatException e) {
         }
-        return 0;
+    } catch (NumberFormatException e) {
+        // 入力が数字じゃなければ0点
     }
+    return 0;
+}
 }
