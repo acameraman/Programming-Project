@@ -1,8 +1,3 @@
-/**
- * Quiz class to manage questions and scoring
- * @param
- * @return
-*/
 import java.util.*;
 import java.io.*;
 public class Quiz
