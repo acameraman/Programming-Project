@@ -1,8 +1,3 @@
-/**
- * A quiz application that covers a variety of topics through multiple choice and true/false questions.
- * @author Alex Camera
- * @version Spring 2025
-*/
 import java.util.*;
 import java.io.*;
 public class QuizApplication
