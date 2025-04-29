@@ -1,14 +1,26 @@
+/**
+ * Multiple choice question class
+*/
 import java.util.*;
 import java.io.*;
 public class MultipleChoiceQuestion extends Question
 {
     private ArrayList<String> options;
 
+    /**
+     * Constructor for MultipleChoiceQuestion
+     * @param questionText The text of the question
+     * @param correctAnswer The correct answer (as a string)
+     * @param options The list of options for the question
+     */
     public MultipleChoiceQuestion(String questionText, String correctAnswer, ArrayList<String> options)
     {
         super(questionText, correctAnswer);
         this.options = options;
     }
+    /**
+     * Displays the question to the user
+     */
     public void display()
     {
         System.out.println(questionText + " (Enter the number of your selected answer)");

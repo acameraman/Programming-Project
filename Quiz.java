@@ -1,7 +1,5 @@
 /**
   * Quiz class to manage questions and scoring
-  * @param
-  * @return
  */
 import java.util.*;
 import java.io.*;
@@ -10,11 +8,18 @@ public class Quiz
     private ArrayList<Question> questions = new ArrayList<>();
     private int score = 0;
 
+    /**
+     * Adds a question to the quiz
+     * @param q The question to add
+     */
     public void addQuestion(Question q)
     {
         questions.add(q);
     }
 
+    /**
+     * Starts the quiz
+     */
     public void start()
     {
         Scanner scanner = new Scanner(System.in);
@@ -29,6 +34,9 @@ public class Quiz
         saveScore();
     }
 
+    /**
+     * Saves the score to a file
+     */
     private void saveScore()
     {
         try (PrintWriter out = new PrintWriter("quiz_results.txt"))

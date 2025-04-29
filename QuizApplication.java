@@ -1,6 +1,7 @@
 /**
   * A quiz application that covers a variety of topics through multiple choice and true/false questions.
   * @author Alex Camera
+  * @author Kouki Tanaka
   * @version Spring 2025
  */
 import java.util.*;
@@ -10,15 +11,19 @@ public class QuizApplication
 	public static void main(String[] args)
 	{
 	    Scanner in = new Scanner(System.in);
-	Quiz quiz = new Quiz();
+	    Quiz quiz = new Quiz();
         String topic = "";
         String questionOwner = "";
-        while(true){
+        while(true)
+        {
             System.out.println("Do you want to enter your own questions or use ours? (Enter 'mine' or 'ours')");
             questionOwner = in.next().trim().toLowerCase();
-            if (questionOwner.equals("mine")||questionOwner.equals("ours")){
+            if (questionOwner.equals("mine")||questionOwner.equals("ours"))
+            {
                 break;
-            } else {
+            }
+            else
+            {
                 System.out.println("Please enter 'mine' or 'ours'. \n");
             }
         }
